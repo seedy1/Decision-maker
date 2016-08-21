@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="andreasgift.decision_maker.MainActivity">
+
+    <item
+        android:id="@+id/homepage"
+        android:orderInCategory="1"
+        android:title="Homepage"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:title="Exit"
+        app:showAsAction="never" />
+</menu>

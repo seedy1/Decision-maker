@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:title = "Decision Maker 1.0"
+    tools:context="andreasgift.decisionmaker.MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/YesNoButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="YES / NO"
+        android:layout_centerInParent="true" />
+
+
+    <Button
+        android:id="@+id/MultichoiceButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_below = "@id/YesNoButton"
+        android:text="MULTICHOICE"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
+
