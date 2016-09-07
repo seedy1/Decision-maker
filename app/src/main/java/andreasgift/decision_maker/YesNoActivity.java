@@ -4,6 +4,8 @@ package andreasgift.decision_maker;
         import java.util.Calendar;
         import java.util.Date;
         import java.util.Random;
+        import java.util.Timer;
+        import java.util.TimerTask;
 
         import android.app.Activity;
         import android.app.DatePickerDialog;
@@ -34,6 +36,7 @@ public class YesNoActivity extends AppCompatActivity {
 
     private static final Random random = new Random();
     private static final String[] YesNoString = {"YES","NO"};
+    private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +56,33 @@ public class YesNoActivity extends AppCompatActivity {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
 
-        //In the event the user first click
         final Button YesNoDecision = (Button) findViewById(R.id.YesNoDecision);
-        YesNoDecision.setOnClickListener(new View.OnClickListener() {
+
+        //set the button screen scrambled while user havent click
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
             @Override
-            public void onClick(View v) {
-                YesNoDecision.setText(randomYesNo());
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        YesNoDecision.setText(randomYesNo());
+                    }
+                });
             }
+        },1000,300);
+
+       // In the event the user first click
+        YesNoDecision.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              timer.cancel();
+          YesNoDecision.setText(randomYesNo());
+           }
         });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,9 +98,6 @@ public class YesNoActivity extends AppCompatActivity {
             case R.id.homepage:
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-                return true;
-            case R.id.exit:
-                super.finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -11,7 +11,8 @@
         android:layout_height="80dp"
         android:id="@+id/YesNoDecision"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="36dp"/>
 
 
 </RelativeLayout>

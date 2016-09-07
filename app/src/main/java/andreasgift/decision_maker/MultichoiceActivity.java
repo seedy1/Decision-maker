@@ -51,6 +51,7 @@ public class MultichoiceActivity extends AppCompatActivity {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
 
+
         //In the event the user click Multichoice Button
         final Button MultichoiceDecision = (Button) findViewById(R.id.MultichoiceDecision);
         MultichoiceDecision.setOnClickListener(new View.OnClickListener() {
@@ -122,9 +123,6 @@ public class MultichoiceActivity extends AppCompatActivity {
             case R.id.homepage:
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
-                return true;
-            case R.id.exit:
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
