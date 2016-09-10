@@ -6,9 +6,9 @@ The YES-NO mode will show random result between YES or NO option.
 The Multichoice mode will ask the input from user, and sshow random result from the input
 
 # App Screenshoot:
-![](/relative/path/to/Capture1.jpg?raw=true "")
-![](/relative/path/to/Capture2.jpg?raw=true "")
-![](/relative/path/to/Capture3.jpg?raw=true "")
+![](https://github.com/snufflesrea/Decision-maker/blob/master/Capture1.JPG "")
+![](https://github.com/snufflesrea/Decision-maker/blob/master/Capture2.JPG "")
+![](https://github.com/snufflesrea/Decision-maker/blob/master/Capture3.JPG "")
 
 </br>Specification:
 </br>Android minSDkVersion : 21 / Android Lollipop and above
